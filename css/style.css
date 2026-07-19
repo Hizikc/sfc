@@ -1,0 +1,9 @@
+html, body {
+    /* Создает круглый градиент из самого центра экрана */
+    background: radial-gradient(circle at center, #6366f1 0%, #000000 100%);
+
+    color: #ffffff;           /* Белый цвет для текста */
+    margin: 0;                 /* Убираем рамки по краям */
+    padding: 0;
+    min-height: 100vh;         /* Растягиваем фон на весь экран */
+}
