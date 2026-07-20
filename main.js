@@ -1,3 +1,8 @@
-import { includeHTML } from './js/html-load.js'; // импортируем из твоего файла
+import { includeHTML } from './js/html-load.js';
+import { initCursor } from './js/dot.js';
 
-includeHTML(); // запускаем загрузку панелек
+// Запускаем сборку HTML-панелей
+includeHTML();
+
+// Запускаем логику дополнительного курсора
+initCursor();
