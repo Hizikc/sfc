@@ -1,6 +1,6 @@
 html, body {
     /* Создает круглый градиент из самого центра экрана */
-    background: radial-gradient(circle at center, #6366f1 0%, #000000 100%); /* цвета первый тот что в центе второй то что с краёв
+    background: radial-gradient(circle at center, #6366f1 0%, #000000 100%) !important;/* цвета первый тот что в центе второй то что с краёв
 
     color: #ffffff;           /* Белый цвет для текста */
     margin: 0;                 /* Убираем рамки по краям */
