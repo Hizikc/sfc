@@ -1,0 +1,73 @@
+/* Нацеливаемся на твой главный класс секции */
+.hero-section {
+  display: flex;
+  justify-content: center;  /* Выравнивание по горизонтали */
+  align-items: center;      /* Выравнивание по вертикали */
+  text-align: center;       /* Центрируем текст внутри h1 и p */
+
+  min-height: calc(100vh - 80px); /* Растягиваем на весь экран за вычетом высоты шапки */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Обертка для контента (строит элементы в столбик) */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Центрирует кнопки и текст по оси */
+  max-width: 800px;         /* Ограничиваем ширину, чтобы текст не расползался */
+}
+
+/* Твой заголовок */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Твой пустой тег p на будущее (чтобы не ломал отступы) */
+.hero-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер для кнопок */
+.hero-buttons {
+  display: flex;
+  gap: 15px;                /* Промежуток между кнопками */
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Базовый класс для кнопок */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Фиолетовая кнопка */
+.btn-primary {
+  background-color: #8A2BE2; /* Твой фиолетовый */
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #7c25cd;
+  transform: translateY(-2px);
+}
+
+/* Прозрачная кнопка-контур */
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #8A2BE2;
+}
+.btn-secondary:hover {
+  background-color: rgba(138, 43, 226, 0.1);
+  transform: translateY(-2px);
+}
