@@ -32,6 +32,22 @@
     <section class="new-projects-section">
       <h2 class="new-projects-title">Мои проекты</h2>
       <p class="new-projects-subtitle">Здесь собраны актуальные версии софта и приватных скриптов.</p>
+      <div class="config-system">
+        <h3>Управление прогрессом</h3>
+        <p class="config-desc">Сайт работает без серверов. Чтобы не потерять прогресс, сохраняйте файл конфигурации.</p>
+
+        <div class="config-actions">
+          <!-- Кнопка выгрузки -->
+          <button onclick="exportConfig()" class="btn-export">Выгрузить конфиг (.json)</button>
+
+          <!-- Кнопка загрузки (скрытый инпут под красивой кнопкой) -->
+          <label class="btn-import-label">
+            Загрузить конфиг
+            <input type="file" id="configFileInput" accept=".json" onchange="importConfig(event)" style="display: none;" />
+          </label>
+        </div>
+      </div>
+
 
       <!-- Этот контейнер выровняет карточки ровно по центру -->
       <div class="new-projects-grid">
