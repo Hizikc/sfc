@@ -1,12 +1,12 @@
 import { includeHTML } from './js/html-load.js';
 import { initCursor } from './js/dot.js';
-import { initconfig } from './js/configSystem.js';
+import { initConfig } from './js/configSystem.js';
 
-
-// Запускаем сборку HTML-панелей
+// 1. Сначала жестко запускаем сборку HTML-панелей
 includeHTML();
 
-// Запускаем логику дополнительного курсора
+// 2. Запускаем кастомный курсор
 initCursor();
 
-initconfig();
+// 3. Запускаем систему конфигов
+initConfig();

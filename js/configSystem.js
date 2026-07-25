@@ -1,11 +1,10 @@
-// Переменная, где хранится список пройденных уроков
+// Объект прогресса
 let userConfig = {
   username: "hiz_student",
-  completedLessons: ["lesson-1"] // добавили тестовый урок
+  completedLessons: []
 };
 
-
-// Функция 1: Скачивает файл с прогрессом на комп
+// Функция экспорта (Выгрузка файла)
 window.exportConfig = function() {
   if (userConfig.completedLessons.length === 0) {
     alert("У вас пока нет пройденных уроков для сохранения!");
@@ -22,10 +21,10 @@ window.exportConfig = function() {
   URL.revokeObjectURL(url);
 }
 
-// Функция 2: Читает файл, который загрузил пользователь
+// Функция импорта (Загрузка файла)
 window.importConfig = function(event) {
-  const file = event.target.files[0];
-  if (!file) return;
+  const files = event.target.files;
+  if (!files || files.length === 0) return;
 
   const reader = new FileReader();
   reader.onload = function(e) {
@@ -34,7 +33,7 @@ window.importConfig = function(event) {
       if (importedData && Array.isArray(importedData.completedLessons)) {
         userConfig = importedData;
         alert(`Прогресс успешно загружен!`);
-        updateLessonsUI(); // Обновляем галочки на экране
+        updateLessonsUI();
       } else {
         alert("Ошибка: Неверный формат файла!");
       }
@@ -42,18 +41,19 @@ window.importConfig = function(event) {
       alert("Не удалось прочитать файл.");
     }
   };
-  reader.readAsText(file);
+  reader.readAsText(files[0]);
 }
 
-// Функция 3: Ищет уроки на странице и подсвечивает их, если они пройдены
-function updateLessonsUI() {
-  // Сначала убираем подсветку со всех уроков
-  document.querySelectorAll('.new-card').forEach(card => {
-    card.style.borderColor = '';
-    card.style.boxShadow = '';
-  });
+// Функция сохранения пройденного урока
+window.saveLessonProgress = function(lessonId) {
+  if (!userConfig.completedLessons.includes(lessonId)) {
+    userConfig.completedLessons.push(lessonId);
+    alert(`Урок ${lessonId} пройден! Теперь можно выгрузить конфиг.`);
+  }
+}
 
-  // Включаем зеленую подсветку для пройденных уроков
+// Функция обновления интерфейса (галочки и свечение)
+function updateLessonsUI() {
   userConfig.completedLessons.forEach(lessonId => {
     const card = document.getElementById(lessonId);
     if (card) {
@@ -63,7 +63,7 @@ function updateLessonsUI() {
   });
 }
 
-// Эта функция запускается при старте сайта (ее вызывает твой main.js)
+// Инициализация при старте
 export function initConfig() {
   console.log("Система конфигов готова!");
 }
