@@ -64,3 +64,10 @@
     .nav-link { font-size: 12px !important; }
     .btn-connect { display: none !important; }
 }
+
+/* Размытие */
+.site-header { /* Или какой там у тебя класс у верхней панели */
+  background: rgba(26, 16, 60, 0.4); /* Полупрозрачный цвет фона (замени на свой, если нужно) */
+  backdrop-filter: blur(12px);       /* Сама магия размытия */
+  -webkit-backdrop-filter: blur(12px); /* Чтобы работало в Safari (на айфонах и маках) */
+}

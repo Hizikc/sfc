@@ -15,6 +15,7 @@
 
     <!-- файл стилей -->
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/card.css">
 
     <!-- Главный JavaScript файл-->
     <script type="module" src="../../main.js"></script>
@@ -28,6 +29,33 @@
 
 </head>
 <body>
+    <section class="new-projects-section">
+      <h2 class="new-projects-title">Мои проекты</h2>
+      <p class="new-projects-subtitle">Здесь собраны актуальные версии софта и приватных скриптов.</p>
+
+      <!-- Этот контейнер выровняет карточки ровно по центру -->
+      <div class="new-projects-grid">
+
+        <!-- Карточка 1 -->
+        <div class="new-card">
+          <div class="new-badge">ACTIVE V1.0.0</div>
+          <h3 class="new-card-title">hiz.log</h3>
+          <p class="new-card-text">Сайт для отслеживания версий проектов hiz.</p>
+          <a href="#" class="new-card-btn">Подробнее &rarr;</a>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="new-card">
+          <div class="new-badge">ACTIVE V1.0.1</div>
+          <h3 class="new-card-title">hiz.html</h3>
+          <p class="new-card-text">Личный сайт hiz.</p>
+          <a href="#" class="new-card-btn">Подробнее &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+
 
     <div data-include="../../blocks/header.html"></div>
     <div data-include="../../blocks/feedback.html"></div>

@@ -1,0 +1,102 @@
+/* Базовое выравнивание всей секции */
+.new-projects-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.new-projects-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.new-projects-subtitle {
+  color: #8b8ea8;
+  font-size: 1rem;
+  margin-bottom: 48px;
+}
+
+/* Контейнер: ставит карточки в ряд по центру и толкает футер вниз */
+.new-projects-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 80px; /* Этот отступ решает проблему — блоки внизу больше не залезут под карточки */
+}
+
+/* Оригинальный дизайн карточки со скрина */
+.new-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 320px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.new-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Неоновый зеленый бейдж */
+.new-badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2ecc71;
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.25);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.15);
+}
+
+.new-card-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.new-card-text {
+  color: #9aa0b7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  flex-grow: 1; /* Оставляет кнопку всегда внизу, если текст разный */
+}
+
+/* Кнопка-рамка из твоего дизайна */
+.new-card-btn {
+  display: block;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 12px 0;
+  color: #2ecc71;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.new-card-btn:hover {
+  background: rgba(46, 204, 113, 0.08);
+  border-color: rgba(46, 204, 113, 0.4);
+}
