@@ -1,0 +1,165 @@
+/* Обнуление и база для страницы ссылок */
+.links-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0b0b1e;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.links-body * {
+  box-sizing: border-box;
+}
+
+/* Неоновые фоновые градиенты */
+.links-glow-1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(0,0,0,0) 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+}
+
+.links-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(192, 38, 211, 0.2) 0%, rgba(0,0,0,0) 70%);
+  bottom: -150px;
+  right: -100px;
+  z-index: 1;
+}
+
+/* Главный контейнер */
+.links-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Шапка */
+.links-header {
+  margin-bottom: 32px;
+}
+
+.links-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.links-username {
+  font-size: 1.5rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.links-subtitle {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Список карточек-ссылок */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* Эффект стекла (Glassmorphism) */
+.links-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.links-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(168, 85, 247, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.links-item-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.links-item-desc {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Футер */
+.links-footer {
+  font-size: 0.8rem;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+/* Жестко центрируем контент обратно, игнорируя чужие стили */
+body.links-body {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
+.links-wrapper {
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.links-list {
+  width: 100% !important;
+}
+.links-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Сделай 16px вместо 50%, если хочешь квадрат со скругленными углами */
+
+  /* Вот эти два свойства спасают от искажений: */
+  object-fit: cover;      /* Растягивает и обрезает лишнее без потери пропорций */
+  object-position: center; /* Центрирует картинку внутри круга */
+
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  margin: 0 auto 16px;
+  display: block;
+}

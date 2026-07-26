@@ -3,6 +3,18 @@
 @import 'footer.css';
 @import 'feedback.css';
 @import 'card.css';
+@import 'links.css';
+
+
+
+
+
+
+
+
+
+
+
 html, body {
     /* Создает круглый градиент из самого центра экрана */
     background: radial-gradient(circle at center, #6366f1 0%, #000000 125%) !important;/* цвета первый тот что в центе второй то что с краёв

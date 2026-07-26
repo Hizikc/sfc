@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env BROWSER=\"%LocalAppData%\\Chromium\\Application\\chrome.exe\" vite --open"
-    },
+  },
   "devDependencies": {
     "cross-env": "^10.1.0",
     "vite": "^8.1.5",
