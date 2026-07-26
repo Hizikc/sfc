@@ -1,0 +1,178 @@
+/* Базовые настройки страницы уроков */
+.lessons-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0b0b1e;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.lessons-body * {
+  box-sizing: border-box;
+}
+
+/* Контейнер всей страницы */
+.lessons-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 60px; /* Отступ сверху под шапку сайта */
+}
+
+.lessons-main-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #a855f7 100%);
+  background-clip: text; /* Оставляем чистый стандарт без -webkit- */
+  color: transparent;    /* Заменяет -webkit-text-fill-color */
+}
+
+
+/* Главная сетка: фиксирует ровно две колонки для карточек */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Стеклянные карточки (Glassmorphism) */
+.lesson-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15), 0 0 15px rgba(168, 85, 247, 0.1);
+}
+
+
+
+/* Трендовые контурные цифры на фоне (во всех карточках в одном месте) */
+.lesson-num {
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(168, 85, 247, 0.25); /* Аккуратный неоновый контур */
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Контент внутри карточек */
+.lesson-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ограничиваем ширину текста в большой центральной карточке */
+.lesson-card-featured .lesson-desc {
+  max-width: 600px;
+}
+
+/* Окошко превью кода (Пасхалка) */
+.lesson-code-preview {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  text-align: left;
+  margin: 15px 0 25px 0;
+  width: 100%;
+  max-width: 360px;
+  min-width: 290px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Подсветка синтаксиса */
+.code-selector {
+  color: #ec4899; /* Розовый */
+  font-weight: bold;
+}
+
+.code-prop {
+  color: #38bdf8; /* Голубой */
+}
+
+.code-val {
+  color: #a855f7; /* Фиолетовый */
+}
+
+/* Сдвиг свойств внутри скобок */
+.code-line {
+  padding-left: 20px;
+}
+
+/* Кнопки */
+.lesson-btn {
+  margin-top: auto; /* Прижимает кнопку к низу */
+  display: inline-block;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s, transform 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Адаптив под мобилки */
+@media (max-width: 768px) {
+  .lessons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-card-featured {
+    grid-column: span 1;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
