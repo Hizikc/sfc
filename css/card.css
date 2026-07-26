@@ -58,7 +58,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #2ecc71;
+  color: #ffffff;
   background: rgba(46, 204, 113, 0.1);
   border: 1px solid rgba(46, 204, 113, 0.25);
   padding: 6px 12px;
@@ -89,7 +89,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   padding: 12px 0;
-  color: #2ecc71;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -124,8 +124,8 @@
 }
 .btn-export, .btn-import-label {
   background: rgba(46, 204, 113, 0.1);
-  border: 1px solid rgba(46, 204, 113, 0.3);
-  color: #2ecc71;
+  border: 1px solid #ffffff;
+  color: #ffffff;
   padding: 10px 15px;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -133,8 +133,8 @@
   transition: all 0.2s ease;
 }
 .btn-export:hover, .btn-import-label:hover {
-  background: rgba(46, 204, 113, 0.2);
-  border-color: #2ecc71;
+  background: #2c2b36;
+  border-color: #ffffff;
 }
 .lessons-body {
   margin: 0;

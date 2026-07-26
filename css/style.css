@@ -6,6 +6,17 @@
 @import 'links.css';
 @import 'lesson.css';
 
+/* Цвет выделения для всего сайта */
+::selection {
+  background-color: rgba(168, 85, 247, 0.4); /* Полупрозрачный фиолетовый фон */
+  color: #ffffff; /* Цвет самого текста при выделении */
+}
+
+/* Фикс для браузеров на старых движках (на всякий случай) */
+::-moz-selection {
+  background-color: rgba(168, 85, 247, 0.4);
+  color: #ffffff;
+}
 
 
 

@@ -53,11 +53,11 @@
 
 /* Фиолетовая кнопка */
 .btn-primary {
-  background-color: #8A2BE2; /* Твой фиолетовый */
+  background-color: #a89efb; /* Твой фиолетовый */
   color: #ffffff;
 }
 .btn-primary:hover {
-  background-color: #7c25cd;
+  background-color: #a89efb;
   transform: translateY(-2px);
 }
 
