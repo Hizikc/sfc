@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 1: Подключение CSS</title>
+</head>
+<body class="single-lesson-body">
+
+  <load src="../blocks/header.html" />
+
+  <main class="lesson-page-container">
+
+    <!-- Левая часть: Теория -->
+    <section class="lesson-theory">
+      <a href="./lessons.html" class="back-to-lessons">← Вернуться к урокам</a>
+
+      <span class="lesson-badge">Урок 01</span>
+      <h1 class="theory-title">Синтаксис и подключение</h1>
+
+      <div class="theory-content">
+        <p>CSS устроен очень просто. Код состоит из <strong>селектора</strong> (что мы хотим покрасить) и <strong>блока объявления</strong> в фигурных скобках (как именно красим).</p>
+
+        <div class="theory-alert">
+          <strong>Правило:</strong> Каждое свойство внутри скобок пишется через двоеточие, а в конце строки <strong>ОБЯЗАТЕЛЬНО</strong> ставится точка с запятой <code>;</code>. Забыл её — весь код ниже сломался.
+        </div>
+
+        <h3>Способ №1: Внешний файл (Наш выбор)</h3>
+        <p>Мы создаем отдельный файл <code>.css</code> и подключаем его в секции <code>&lt;head&gt;</code> через тег <code>&lt;link&gt;</code>:</p>
+
+        <div class="theory-alert" style="border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.02)">
+          <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
+        </div>
+
+        <h3>Способ №2: Тег style</h3>
+        <p>Стили пишутся прямо внутри HTML-страницы. Удобно для быстрых тестов, но когда кода много — страница превращается в кашу.</p>
+
+        <h3>Способ №3: Инлайновые стили</h3>
+        <p>Когда стили пихают прямо в атрибут тега: <code>&lt;button style="color: red;"&gt;</code>. Худший вариант, так как этот код невозможно переиспользовать.</p>
+      </div>
+
+      <div class="lesson-navigation-btns">
+        <a href="./lesson0.html" class="btn-secondary">← Назад</a>
+        <a href="./lesson2.html" class="btn-primary">Урок 2: Селекторы →</a>
+      </div>
+    </section>
+
+    <!-- Правая часть: Визуальный интерактив -->
+    <section class="lesson-visual">
+      <div class="glass-terminal">
+        <div class="terminal-body">
+
+          <span class="comment">// Инлайновый стиль (Тяжело менять):</span>
+          <div class="preview-html-only">
+            <button style="background: gray; color: white; padding: 5px; border: none;">inline button</button>
+          </div>
+
+          <span class="comment">// Стиль из внешнего файла (Красиво и гибко):</span>
+          <div class="preview-css-applied">
+            <button class="neon-btn">class="neon-btn"</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <load src="../blocks/footer.html" />
+
+</body>
+</html>
