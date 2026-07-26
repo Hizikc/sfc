@@ -5,6 +5,7 @@
 @import 'card.css';
 @import 'links.css';
 @import 'lesson.css';
+@import 'lesson-single.css';
 
 /* Цвет выделения для всего сайта */
 ::selection {

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 0: Зачем тебе CSS?</title>
+
+  <!-- файл стилей -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body class="single-lesson-body">
+
+
+
+  <main class="lesson-page-container">
+
+    <!-- Левая часть: Живая теория -->
+    <section class="lesson-theory">
+      <a href="./lessons.html" class="back-to-lessons">← Вернуться к урокам</a>
+
+      <span class="lesson-badge">Урок 00</span>
+      <h1 class="theory-title">Зачем тебе CSS?</h1>
+
+      <div class="theory-content">
+        <p>Если коротко: <strong>HTML — это скелет, а CSS — это кожа, одежда и стиль.</strong> Без CSS любой современный сайт вроде YouTube, Telegram или твоего собственного портфолио превратится в уродливую белую страницу с синими ссылками и черным текстом из 1991 года.</p>
+
+        <div class="theory-alert">
+          <strong>Факт:</strong> Браузеру абсолютно плевать на красоту. Ему дали команду отобразить текст — он отобразил. Твоя задача как фронтендера — заставить этот текст выглядеть дорого.
+        </div>
+
+        <h3>Что мы сделаем в этом курсе:</h3>
+        <ul class="custom-list">
+          <li><span>⚡</span> Научимся управлять сетками (Flexbox и Grid), чтобы блоки не разлетались к херам при смене экрана.</li>
+          <li><span>🔮</span> Разберем Glassmorphism — эффекты матового стекла, которые ты уже видишь на этом сайте.</li>
+          <li><span>🎨</span> Поймем, как правильно подбирать и наслаивать тени (box-shadow) для создания объема и неона.</li>
+        </ul>
+
+        <p>В веб-разработке чистый HTML никому не нужен. Платят именно за интерфейс, в котором пользователю кайфово находиться. Так что давай настраивать стили.</p>
+      </div>
+
+      <div class="lesson-navigation-btns">
+        <a href="./lessons.html" class="btn-secondary">К списку уроков</a>
+        <a href="./lesson1.html" class="btn-primary">Следующий урок →</a>
+      </div>
+    </section>
+
+    <!-- Правая часть: Визуальный интерактивный блок -->
+    <section class="lesson-visual">
+      <div class="glass-terminal">
+          <div class="terminal-header">
+            <span class="terminal-title">preview.html</span>
+
+            <!-- Вот этот блок обязательно должен быть внутри шапки: -->
+            <div class="terminal-controls-win">
+              <span>—</span>
+              <span>❑</span>
+              <span>✕</span>
+            </div>
+          </div>
+
+        <div class="terminal-body">
+          <p class="comment">// Как видит сайт обычный человек:</p>
+          <div class="preview-box html-only">
+            <h1>Просто заголовок</h1>
+            <button>Просто кнопка</button>
+          </div>
+
+          <p class="comment">// Что происходит, когда мы вкатываем CSS:</p>
+          <div class="preview-box css-applied">
+            <h1 class="glow-text">Интерфейс будущего</h1>
+            <button class="neon-btn">Начать кодить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <load src="../../blocks/header.html" />
+  <load src="../../blocks/footer.html" />
+
+  <script type="module" src="../js/lesson0.js"></script>
+</body>
+</html>

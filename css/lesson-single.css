@@ -1,0 +1,295 @@
+/* Изолированная база для страниц одиночных уроков */
+.single-lesson-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0b0b1e;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.single-lesson-body * {
+  box-sizing: border-box;
+}
+
+/* Главный контейнер: делит экран на две колонки */
+.lesson-page-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Левая колонка чуть шире под текст */
+  gap: 50px;
+  align-items: start;
+}
+
+/* --- ЛЕВАЯ ЧАСТЬ: ТЕОРИЯ --- */
+.lesson-theory {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Кнопка назад */
+.back-to-lessons {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+  display: inline-block;
+  width: fit-content;
+}
+
+.back-to-lessons:hover {
+  color: #a855f7;
+}
+
+/* Бейдж с номером урока */
+.lesson-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ec4899;
+  margin-bottom: 8px;
+}
+
+.theory-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+  line-height: 1.2;
+}
+
+/* Текстовый контент */
+.theory-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+.theory-content h3 {
+  font-size: 1.4rem;
+  margin: 40px 0 20px 0;
+  color: #ffffff;
+}
+
+/* Важная плашка с фактом */
+.theory-alert {
+  background: rgba(168, 85, 247, 0.05);
+  border-left: 4px solid #a855f7;
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  margin: 30px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.theory-alert strong {
+  color: #a855f7;
+}
+
+/* Кастомный список со смайликами/иконками */
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.custom-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #cbd5e1;
+}
+
+.custom-list li span {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Навигация внизу статьи */
+.lesson-navigation-btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary, .btn-secondary {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* --- ПРАВАЯ ЧАСТЬ: ИНТЕРАКТИВНЫЙ ТЕРМИНАЛ --- */
+.lesson-visual {
+  position: sticky; /* Окно будет красиво зафиксировано при скролле статьи */
+  top: 120px;
+}
+
+.glass-terminal {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Шапка окна: жестко расталкивает название и кнопки по краям */
+.terminal-header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 20px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+}
+
+/* Название файла слева */
+.terminal-title {
+  color: #94a3b8;
+  font-family: monospace;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Кнопки управления справа: теперь они точно внутри контейнера */
+.terminal-controls-win {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px;
+  color: #64748b;
+  font-family: monospace;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.terminal-controls-win span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.terminal-controls-win span:hover {
+  color: #ffffff;
+}
+
+.terminal-controls-win span:last-child:hover {
+  color: #ef4444; /* Крестик при наведении станет красным */
+}
+
+/* Яркие, контрастные комментарии (подсказки) в стиле хакерского терминала */
+.comment {
+  font-family: monospace;
+  color: #22c55e; /* Сочный зеленый цвет (как в VS Code или терминале) */
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.85; /* Слегка приглушаем, чтобы не спорил с главным текстом */
+  display: block;
+  text-align: left;
+}
+
+
+/* Окошки превью элементов */
+.preview-box {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.preview-box:last-child {
+  margin-bottom: 0;
+}
+
+/* Блок ДО (Голый HTML) */
+.html-only h1 {
+  all: revert; /* Сбрасывает стили сайта до дефолтных браузерных */
+  color: #fff;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.html-only button {
+  all: revert;
+}
+
+/* Блок ПОСЛЕ (С примененным CSS в твоем стиле) */
+.css-applied .glow-text {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.css-applied .neon-btn {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transition: transform 0.2s;
+}
+
+.css-applied .neon-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Адаптив: на экранах поменьше перестраиваем в одну колонку */
+@media (max-width: 968px) {
+  .lesson-page-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 100px;
+  }
+
+  .lesson-visual {
+    position: static;
+  }
+}
